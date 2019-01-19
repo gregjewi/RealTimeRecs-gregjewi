@@ -1,0 +1,17 @@
+MEASURE,TAG,FIELDS,,,,,,,,,,,,,,,
+CSO,SITE,FLOWRATE,FLOWRATE_FROM_PI_MDG,LEVEL_OFFSET,RIVER_LEVEL,SEWER_LEVEL,THRESHOLD,TOTAL_FLOW,DT_UTC,,,,,,,,
+,,[cfs],[cfs],[ft],[ft],[ft],[ft],[cfs],"string: ""%m-%d %H:%M UTC""",,,,,,,,
+ISD,SITE,DAM_PRESS,DS_LEVEL,DS_TARGET,TARGET_PRESS,US_LEVEL,US_TARGET_LEVEL,DT_UTC,,,,,,,,,
+,,,[ft],[ft],,[ft],[ft],"string: ""%m-%d %H:%M UTC""",,,,,,,,,
+VALVE,SITE,DS_LEVEL,US_LEVEL,VALVE_1,VALVE_2,VALVE_3,DT_UTC,,,,,,,,,,
+,,[ft],[ft],% Open,% Open,% Open,"string: ""%m-%d %H:%M UTC""",,,,,,,,,,
+FREUD,SITE,STATION_FLOWRATE,STATION_TOTAL_FLOW,WET_WELL_1,ST1,ST2,ST3,ST4,ST5,ST6,ST7,ST8,SN9,SN10,DT_UTC,,
+,,[cfs],[cfs],[ft] - Depth,boolean,boolean,boolean,boolean,boolean,boolean,boolean,boolean,boolean,boolean,"string: ""%m-%d %H:%M UTC""",,
+FAIRVIEW,SITE,STATION_FLOWRATE,STATION_TOTAL_FLOW,WET_WELL_1,SN1,SN2,SN3,SN4,DT_UTC,,,,,,,,
+,,[cfs],[cfs],[ft] - Depth,boolean,boolean,boolean,boolean,"string: ""%m-%d %H:%M UTC""",,,,,,,,
+CONNER,SITE,STATION_FLOWRATE,STATION_TOTAL_FLOW,WET_WELL_1,WET_WELL_2,ST1,ST2,ST3,ST4,ST5,ST6,ST7,ST8,SN9,SN10,SN11,DT_UTC
+,,[cfs],[cfs],[ft] - Elevation,[ft] - Elevation,boolean,boolean,boolean,boolean,boolean,boolean,boolean,boolean,boolean,boolean,boolean,"string: ""%m-%d %H:%M UTC"""
+CSO_BASIN,SITE,BASIN_LEVEL,FOREBAY_LEVEL,DT_UTC,,,,,,,,,,,,,
+,,[ft],[ft],"string: ""%m-%d %H:%M UTC""",,,,,,,,,,,,,
+SEWER_METER,SITE,FLOW,LEVEL,TOTAL,DT_UTC,,,,,,,,,,,,
+,,[cfs],[ft],,"string: ""%m-%d %H:%M UTC""",,,,,,,,,,,,
