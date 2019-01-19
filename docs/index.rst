@@ -30,8 +30,7 @@ The purpose of this documentation is to provide information on the following:
    sections/SoftwareAndApplications
    sections/WaterExchangeMarket
    sections/DeterminingParameters
-   
-.. sections/Theory
+   sections/Theory
 
 Indices and tables
 ==================
