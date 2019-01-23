@@ -74,12 +74,14 @@ Timeseries Plots
 Additionally, the Dashboard includes `Timeseries Plots`_ showing a variety of system measurements and recommendations. 
 These plots allow operators to look at historical to real-time measurements and recommendations to visualize the system as a whole and control operation performance.
 
-.. figure:: images/TimeseriesPlots.png
+.. figure:: images/TimeseriesPlots.PNG
 	:figclass: align-center
 
 	*Timeseries plots showing up to real-time measurements and recommendations for system elements.*
 
-.. figure:: images/PumpAndGateActivity.png
+Something in between
+
+.. figure:: images/PumpAndGateActivity.PNG
 	:figclass: align-center
 
 	*Timeseries plots showing the pump and gate activity (On/Off, Percent Open) at for system elements.*
