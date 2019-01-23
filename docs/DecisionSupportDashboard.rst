@@ -10,6 +10,8 @@ Interested in learning more about Grafana?
 Users with proper credentials can access the GLWA Eastside Decision-Support Dashboard by navigating and logging in to `the Open-Storm Grafana Portal <http://data.open-storm.org:3000/>`_ and click the GLWW Eastside Decision-Support Dashboard. 
 Or follow the direct link `here <http://data.open-storm.org:3000/dashboard/db/glwa-eastside-decision-support-dashboard?orgId=1>`_.
 
+Having trouble logging in to our Grafana Dashboard? Check out :doc:`LoginGrafana` for more information.
+
 .. note:: If you would like credentials to access the Decision-Support Dashboard, contact gregjewi@umich.edu.
 
 
@@ -79,7 +81,8 @@ These plots allow operators to look at historical to real-time measurements and 
 
 	*Timeseries plots showing up to real-time measurements and recommendations for system elements.*
 
-Something in between
+
+Plots of Pump and Gate Activity are also available.
 
 .. figure:: images/PumpAndGateActivity.PNG
 	:figclass: align-center

@@ -28,6 +28,7 @@ The purpose of this documentation is to provide information on the following:
 
    About
    DecisionSupportDashboard
+   LoginGrafana
    RealTimeWorkFlow
    SoftwareAndApplications
    WaterExchangeMarket
