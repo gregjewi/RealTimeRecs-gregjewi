@@ -6,6 +6,8 @@
 Welcome to GLWA Real-Time Recommendation documentation!
 =======================================================
 
+.. image:: images/LOGOS.png
+
 The Real-Time Recommendation Service is a software application designed
 to provide control recommendations to operators of stormwater networks.
 This work was developed with the support of the `Great Lakes Water Authority <https://www.glwater.org/>`_ (GLWA). 
@@ -24,13 +26,15 @@ The purpose of this documentation is to provide information on the following:
    :maxdepth: 2
    :caption: Contents:
 
-   sections/About
-   sections/DecisionSupportDashboard
-   sections/RealTimeWorkFlow
-   sections/SoftwareAndApplications
-   sections/WaterExchangeMarket
-   sections/DeterminingParameters
-   sections/Theory
+   About
+   DecisionSupportDashboard
+   RealTimeWorkFlow
+   SoftwareAndApplications
+   WaterExchangeMarket
+   DeterminingParameters
+   Theory
+
+
 
 Indices and tables
 ==================

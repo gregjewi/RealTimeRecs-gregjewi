@@ -1,6 +1,8 @@
 Determing Parameters to Use in Water Exchange Market Price Calculations
 =======================================================================
 
+.. image:: images/LOGOS.png
+
 At the highest level, our objective is to improve the water quality of receiving bodies in the urban hydrosphere.
 Practically this statement could mean different things for different systems, requiring different solutions.
 Likewise, the method for evaluating success of a solution can differ.

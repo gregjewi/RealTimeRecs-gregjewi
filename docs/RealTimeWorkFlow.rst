@@ -1,11 +1,15 @@
 Real-Time Workflow
 ==================
 
+.. image:: images/LOGOS.png
+
 Recommendations are currently provided on a 10 minute interval, refreshed on the 7s (ie. 0:07, 0:17, 0:27, etc.) The procedure is written in Python and executed from an Amazon Web Service (AWS) instance.
 
 Process
 -------
-0. *(Every 10 minutes on the 5's)* Scripts on GLWA local server pushes data from assets in study area to University of Michigan hosted database on InfluxDB instance. **Note: scripts and code in this step will not be covered in documentation. For information on this process, contact Joe.Burchi@glwater.org.**
+0. *(Every 10 minutes on the 5's)* Scripts on GLWA local server pushes data from assets in study area to University of Michigan hosted database on InfluxDB instance [#]_. 
+
+.. [#] Note: scripts and code in this step will not be covered in documentation. For information on this process, contact Joe Burchi at GLWA.
 
 1. **'CombinedMBC.py'**: Queries InfluxDB for most recent system states, performs control routine with those data, writes recommendations back to InfluxDB.
 2. **'latest.py'**: Queries InfluxDB for most recent system states of individual pumps and gates. Builds .svg file that reflects these states.
@@ -18,6 +22,6 @@ Process
 	:maxdepth: 1
 	:caption: Contents:
 
-	WorkFlow/CombinedMBC
-	WorkFlow/BuildingTheSVGs
-	WorkFlow/ObjectToS3
+	CombinedMBC
+	BuildingTheSVGs
+	ObjectToS3

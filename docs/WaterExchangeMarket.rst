@@ -1,6 +1,8 @@
 Water Exchange Market
 =====================
 
+.. image:: images/LOGOS.png
+
 To Branko and Co.,
 
 *Sara (T) let me know that you are in a process of developing new terminology for our control algorithm (formerly 'Market-Based Control'.)*
@@ -31,7 +33,7 @@ As we expand to incorporate water quality characteristics into the decision engi
 Further, we can think of the heuristics that we employ (e.g. if upstream volume > 0.95, then release water) as a power that a central authority, a la the Federal Reserve, exerts to influence the market or price of the market.
 (Thought: to be intellectually consistent, instead of having the release be hard-coded after a heuristic is met, maybe we manipulate the *price* such that the flooding upstream agent can make a trade?)
 
-.. image:: WEM.png
+.. image:: images/WEM.png
 	:align: center
 
 

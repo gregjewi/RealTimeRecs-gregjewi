@@ -1,5 +1,7 @@
 Decision-Support Dashboard
 ==========================
+.. image:: images/LOGOS.png
+
 
 All features of the Decision-Support Dashboard are built in `Grafana <https://grafana.com/>`_. 
 Interested in learning more about Grafana?
@@ -19,7 +21,7 @@ Having established this connection, we can build the dashboard visuals by specif
 During the run of the recommendation engine, graphics are built and uploaded to an AWS S3 bucket that reflect the latest recommendation.
 The image can then be accessed via its url in Grafana.
 
-.. figure:: WorkFlow/DashboardArchitecture.png
+.. figure:: images/DashboardArchitecture.png
 	:figclass: align-center
 
 	*Decision-Support Dashboard architecture*
@@ -30,7 +32,7 @@ Real-Time Graphic
 
 The main feature of the Decision-Support Dashboard is the graphic displaying the latest sensor readings and the recommendations for the system. 
 
-.. figure:: WorkFlow/base_latest_recommended.png
+.. figure:: images/base_latest_recommended.png
 	:figclass: align-center
 
 	*Primary graphic for Decision-Support Dashboard, GLWA eastside.*
@@ -38,7 +40,7 @@ The main feature of the Decision-Support Dashboard is the graphic displaying the
 The Real-Time Graphic uses the `Pictureit <https://grafana.com/plugins/bessler-pictureit-panel>`_ plugin available in Grafana [#]_. 
 This plugin allows measurements from our InlfuxDB Database to be superimposed on top of an image.
 The image displayed is upated every 10 minutes as part of the recommendation engine.
-More information on how the image is made can be found in :doc:`WorkFlow/BuildingTheSVGs`.
+More information on how the image is made can be found in :doc:`BuildingTheSVGs`.
 
 
 
@@ -64,7 +66,7 @@ The following are important feautures in the graphic:
 	**Time**: the time that the measurement or recommendation was taken. 
 	If the time is more than 10 minutes old, it may indicate that a sensor in the field is not reporting its measurements to the application or that the recommendation engine experiencing errors.
 
-.. figure:: WorkFlow/DashboardPointers.png
+.. figure:: images/DashboardPointers.png
 	:figclass: align-center
 
 Timeseries Plots
@@ -72,12 +74,12 @@ Timeseries Plots
 Additionally, the Dashboard includes `Timeseries Plots`_ showing a variety of system measurements and recommendations. 
 These plots allow operators to look at historical to real-time measurements and recommendations to visualize the system as a whole and control operation performance.
 
-.. figure:: WorkFlow/TimeseriesPlots.png
+.. figure:: images/TimeseriesPlots.png
 	:figclass: align-center
 
 	*Timeseries plots showing up to real-time measurements and recommendations for system elements.*
 
-.. figure:: WorkFlow/PumpAndGateActivity.png
+.. figure:: images/PumpAndGateActivity.png
 	:figclass: align-center
 
 	*Timeseries plots showing the pump and gate activity (On/Off, Percent Open) at for system elements.*

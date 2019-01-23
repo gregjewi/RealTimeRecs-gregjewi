@@ -1,6 +1,8 @@
 Theory
 ======
 
+.. image:: images/LOGOS.png
+
 .. In this section you will find:
 
 .. * An explanation of the market-based approach (MBA),
