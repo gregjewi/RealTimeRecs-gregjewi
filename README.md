@@ -1,3 +1,3 @@
 # RealTimeRecs
 
-See the ReadTheDocs Page For More information.
+See the our webstite: https://realtimerecs-gregjewi.readthedocs.io/en/latest/ for more information!
