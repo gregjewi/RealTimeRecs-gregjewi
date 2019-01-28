@@ -3,10 +3,12 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+.. image:: images/LOGOS.png
+
+
 Welcome to GLWA Real-Time Recommendation documentation!
 =======================================================
 
-.. image:: images/LOGOS.png
 
 The Real-Time Recommendation Service is a software application designed
 to provide control recommendations to operators of stormwater networks.
@@ -17,24 +19,24 @@ where possible -- separate general information from the GLWA-specific informatio
 Information only relevant to GLWA's application will be indicated with the key (GLWA).
 
 The purpose of this documentation is to provide information on the following:
-    * **Decision Support Dashboard**: Interpretting and using the recommendations provided through the visualization dashboards.
-    * **Decision Engine Workflow**: Explanation about the structure and procedure to provide recommendations.
-    * **Theory**: Provide description of the theoretic framework through which real-time recommendations are generated.
+    * **Decision-Support Dashboard**: Introduce the Decision-Support Dashboard and information about how to use the recommendations provided.
+    * **Recommendation Engine Workflow**: Explanation about the structure and procedure to provide recommendations. Provide evidence supporting current implementation.
+    * **Theory**: Describe the framework through which real-time recommendations are generated.
     * **Software & Applications**: Outline application workflow and highlight key functionality of scripts and packages.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
 
-   About
+   ExecutiveSummary
+   GettingStarted
    DecisionSupportDashboard
-   LoginGrafana
    RealTimeWorkFlow
+   MethodologyAndResults
    SoftwareAndApplications
-   WaterExchangeMarket
-   DeterminingParameters
-   Theory
-
+   EvaluationPlan
+   FutureWork
+   SupportingDocumenation
 
 
 Indices and tables

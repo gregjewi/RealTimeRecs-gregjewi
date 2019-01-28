@@ -1,8 +1,8 @@
-Real-Time Workflow
-==================
-
 .. image:: images/LOGOS.png
 
+
+Real-Time Workflow
+==================
 Recommendations are currently provided on a 10 minute interval, refreshed on the 7s (ie. 0:07, 0:17, 0:27, etc.) The procedure is written in Python and executed from an Amazon Web Service (AWS) instance.
 
 Process

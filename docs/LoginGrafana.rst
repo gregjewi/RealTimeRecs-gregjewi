@@ -1,7 +1,9 @@
+.. image:: images/LOGOS.png
+
+
 Logging in to Open-Storm Grafana Page
 =====================================
 
-.. image:: images/LOGOS.png
 
 Follow these steps to login to Grafana and access the GLWA Eastside Decision Support Dashboard.
 

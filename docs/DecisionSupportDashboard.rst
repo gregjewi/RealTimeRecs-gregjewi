@@ -1,6 +1,8 @@
+.. image:: images/LOGOS.png
+
+
 Decision-Support Dashboard
 ==========================
-.. image:: images/LOGOS.png
 
 
 All features of the Decision-Support Dashboard are built in `Grafana <https://grafana.com/>`_. 
