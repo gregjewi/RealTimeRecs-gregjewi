@@ -7,8 +7,8 @@
 
 import boto3
 bucket = 'YOUR_BUCKET_HERE'
-obj = 'base_latest_recommended.png'
-obj_path = '/home/ubuntu/RT_Recs/GRAPHICS/'
+obj = 'obj_filename.png'
+obj_path = '/obj/path/'
 
 resource = 's3'
 

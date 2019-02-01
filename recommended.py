@@ -10,9 +10,9 @@ import svgutils.transform as sg
 import datetime as dt
 
 # Establish InfluxDB Connection
-influx_client = SA.connection('/home/ubuntu/RT_Recs/csv/Influx_Connect_File.csv')
+influx_client = SA.connection('PATH/TO/Influx_Connect_File.csv')
 # Bring in Fields To Query
-asset_fields = SA.get_asset_fields('/home/ubuntu/RT_Recs/csv/GLWA_infdb_data_structures.csv')
+asset_fields = SA.get_asset_fields('PATH/TO/GLWA_infdb_data_structures.csv')
 
 # Pumpstation class needs: site_name, measure, query_fields
 fvw = SA.pumpstation('FVW','FAIRVIEW',asset_fields['FAIRVIEW'])
@@ -26,7 +26,7 @@ for ps in [con,fre,fvw]:
     
     for key in ps.recommended:
         if ps.recommended[key] > 0:
-            fstr = '/home/ubuntu/RT_Recs/GRAPHICS/{0}/REC/{1}/{2}.svg'.format(ps.measure,key,ps.recommended[key])
+            fstr = 'GRAPHICS/{0}/REC/{1}/{2}.svg'.format(ps.measure,key,ps.recommended[key])
             add_to_base.append(fstr)
             
 
@@ -47,4 +47,4 @@ svg_list.append(build_time)
 
 # Make Rec Pump Layer 
 build.append(svg_list)
-build.save('/home/ubuntu/RT_Recs/GRAPHICS/recommended.svg')
+build.save('PATH/TO/GRAPHICS/recommended.svg')

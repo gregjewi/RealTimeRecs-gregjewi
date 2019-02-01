@@ -9,7 +9,7 @@ All features of the Decision-Support Dashboard are built in `Grafana <https://gr
 Interested in learning more about Grafana?
 `Check out the docs <http://docs.grafana.org/guides/getting_started/>`_.
 
-Users with proper credentials can access the GLWA Eastside Decision-Support Dashboard by navigating and logging in to `the Open-Storm Grafana Portal <http://data.open-storm.org:3000/>`_ and click the GLWW Eastside Decision-Support Dashboard. 
+Users with proper credentials can access the GLWA Eastside Decision-Support Dashboard by navigating and logging in to `the Open-Storm Grafana Portal <http://data.open-storm.org:3000/>`_ and click the GLWA Eastside Decision-Support Dashboard. 
 Or follow the direct link `here <http://data.open-storm.org:3000/dashboard/db/glwa-eastside-decision-support-dashboard?orgId=1>`_.
 
 Having trouble logging in to our Grafana Dashboard? Check out :doc:`LoginGrafana` for more information.
