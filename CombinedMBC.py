@@ -43,7 +43,7 @@ CC_BF = SA.cso_basin('CONNERS_CREEK','CSO_BASIN',asset_fields['CSO_BASIN'])
 DRI = SA.sewer_meter('DT_S_8_DRI@JEFFERSONIAN_APT','SEWER_METER',asset_fields['SEWER_METER'])
 
 
-# ---- Set Dimensional Parameters ----
+# ---- Set Physical Attributes ----
 con.invert = (44.50,55.0)
 con.depth_max = (50,40)
 con.flood_el = (95.0,)
