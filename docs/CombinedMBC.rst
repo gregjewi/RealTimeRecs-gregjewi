@@ -88,8 +88,64 @@ Market-Based Control
 ----------------------
 
 The lines 118 through 189 of code follow the methodology for determining individual's purhcasing power, as described in :doc:`WaterExchangeMarket`.
-Normalized depths and upstream parameter weights for assets are collected into arrays. 
+Normalized depths and parameter weights for both upstream assets and downstream locations are collected into arrays. 
 In the case that the measured and normalized depth is a negative number, the normalized value is set to zero. 
 (This can occur in cases where an instrument reports a wet well depth that can be below the invert elevation of the reservoir, and which the conceptual model recognizes as the asset's bottom.)
-Likewise, upstream weighting parameters are collected into arrays.
-The indexes for the arrays correspond 
+The indexing of asset normal depth and the upstream weighting parameters should be the same.
+Once the arrays are made, upstream Wealth and downstream Cost are calculated for each group.
+Pareto price for each group is then calculated using Wealth and Cost.
+With the paretor price of each group in hand, purchasing price for individual assets is determined.
+If the purchasing power of an asset is negative, the value is set to zero.
+
+The following code is an example of the workflow for a single grouping:
+
+.. code-block:: python
+	
+	# Make array of normalized depths
+	d_norm_1 = [ 
+	    con.fields['WET_WELL_2'][2], 
+	    fre.fields['WET_WELL_1'][2],
+	    CC_BF.fields['BASIN_LEVEL'][2]
+	]
+	d_norm_1 = np.array(d_norm_1)
+
+	# if depth is negative, make zero
+	d_norm_1[d_norm_1 < 0] = 0.0
+
+	# -- Collect u_params of assets into arrays
+	u_p_1 = [
+	    con.u_param['ST'][0],
+	    fre.u_param['ST'][0],
+	    CC_BF.u_param['FORE_1'][0]
+	]
+	u_p_1 = np.array(u_p_1)
+
+
+	# Tank numbers
+	ntanks1 = len(u_p_1) + 1
+
+
+	# Calculate Pwealth of upstream group
+	PW_1 = d_norm_1 * u_p_1
+
+	# Calculate Downstream Costs
+	downstreamAsset.calc_dcost()
+
+	dcost = downstreamAsset.d_cost[1]
+
+
+	# Calculate the Pareto Price
+	Pareto = ( Pwealth + dcost ) / ntanks1
+
+
+	# Calculate Purchasing Power
+	Ppower_1 = PW_1 - Pareto
+
+	# Set purchasing power to 0 if negative
+	Ppower1[Ppower1 < 0] = 0
+
+
+The purchasing power of any individual asset does not have any intrinsict physical meaning to how much can be released downstream.
+Rather, it is value providing insite into the relation between the different asset states.
+To make the purchasing power a meaningful value, relatable to the physical world, it is multiplied by the available volume downstream.
+Available downstream volume is calculated in lines 192-198.
