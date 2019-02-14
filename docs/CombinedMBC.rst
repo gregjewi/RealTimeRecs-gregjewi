@@ -23,7 +23,7 @@ User-Defined Inputs
 
 Proper execution of the control and recommendation proocedure requires user input to define variables critical to the calculations.
 
-..note:: Most user-defined inputs are tuples to take advantage of the data type's immutable characteristic, and therefore accidental changing of the value during operations.
+.. note:: Most user-defined inputs are tuples to take advantage of the data type's immutable characteristic, and therefore accidental changing of the value during operations.
 
 Recommendation Interval and Threshold
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -84,8 +84,8 @@ The following lines query the InfluxDB for measurements and then normalizes them
 The final line, ``DRI.every_timestep(influx_client)``, queries the database and then calculates the normalized cross sectional area in the sewer conduit where the measurement was taken.
 
 
-Market-Based Control
-----------------------
+Market-Based Control and Purchasing Power
+-------------------------------------------
 
 The lines 118 through 189 of code follow the methodology for determining individual's purhcasing power, as described in :doc:`WaterExchangeMarket`.
 Normalized depths and parameter weights for both upstream assets and downstream locations are collected into arrays. 
@@ -145,7 +145,73 @@ The following code is an example of the workflow for a single grouping:
 	Ppower1[Ppower1 < 0] = 0
 
 
-The purchasing power of any individual asset does not have any intrinsict physical meaning to how much can be released downstream.
-Rather, it is value providing insite into the relation between the different asset states.
-To make the purchasing power a meaningful value, relatable to the physical world, it is multiplied by the available volume downstream.
-Available downstream volume is calculated in lines 192-198.
+Purchasing Power to Recommendations
+------------------------------------
+This section outlines how we transform purchasing power, as calculated in the section above, into a recommendation that is understandable and actionable by humans.
+
+The purchasing power of an individual asset does not have intrinsic physical meaning to how much can be released downstream.
+Rather, it is a value providing insite into the relation between the different asset states.
+To make the purchasing power a meaningful value, relatable to the physical world, it is transformed into a volume of downstream capacity.
+Having "purchased" downstream volume, the volume can be divided by the time interval to determine a target flow rate.
+Knowing the target flow rate for each control point, we can make special recommendations for each that is based on our knowledge of the control capabilities.  
+For example, given a recommended flow rate for a pump station, the number of pumps to turn on can be calculated. 
+Likewise with a target flow rate and knowledge of the hydraulic conditions, a recommendation can be made for how to operate gates and valves.
+
+These actions are completed in lines 191-296 of ``CombinedMBC.py``.
+
+
+Calculate Available Fraction
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The available fraction, :math:`f_{available}`, of the downstream is thought of as:
+
+	:math:`f_{availabe} = 1 - f_{measured}`
+
+**Conner Creek Retention Basin** and **Fairview Wet Well**: For retention basins or wet wells, we assume a linear relationship between depth and volume [#f1]_ .
+Therefore we can approximate the available volume, :math:`V_{available}`, by
+
+	:math:`V_{available} = f_{available} * Depth_{max} * A_{cs}`
+
+	where:
+
+		- :math:`V_{available}` is the available volume at a downstream point,
+		- :math:`f_{available}` is the available fraction of depth,
+		- :math:`Depth_{max}` is the maximum depth in the wet well or basin, and
+		- :math:`A_{cs}` is the horizontal cross sectional area of the basin, assumed to be constant at all depths.
+
+.. [#f1] The assumption of linearity was based up the GDRSS model. The constants used to calculate available volume were taken from this model.
+
+**DRI**: For metered sewer locations that serve as the downstream point in a group, such as the DT-S-8 in the DRI, the available volume, :math:`V_{available}`, is calculated differently that basins and reservoirs. 
+This is because in a sewer line we do not have a clear control volume like a well defined basin or wet well.
+Instead we have assumed that there is 1,000-foot section of sewer, centered around sewer meter DT-S-8 where its measurements are representative of the section.
+Doing so, we can approximate the available volume, :math:`V_{available}`, in the sewer by
+
+	:math:`V_{available} = f_{available} * A_{max} * L_{rep}`
+
+	where:
+
+		- :math:`V_{available}` is the available volume at a downstream point,
+		- :math:`f_{available}` is the fraction area available at the sensored location,
+		- :math:`A_{max}` is the maximum vertical cross sectional area of the sewer at the meter location, and
+		- :math:`L_{rep}` is the length of sewer that we assume the value of the measure is accurate for.
+
+
+These calculations can be found in line 191-202 below.
+
+.. literalinclude:: C:\Users\Hail\Desktop\Github\RealTimeRecs-gregjewi\CombinedMBC.py
+	:lines: 191-202
+
+
+Available Fraction to Flow Goals
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. literalinclude:: C:\Users\Hail\Desktop\Github\RealTimeRecs-gregjewi\CombinedMBC.py
+	:lines: 203-216
+
+
+Writing Recommendations
+-------------------------
+Finally, recommendations for assets are written to the Influx DB, so that the recommendations can be used for the :doc:`DecisionSupportDashboard`.
+
+
+
+.. note:: Asset-specific operation recommendations for the Sewer Gates to Conner Creek Retention Basin from the Forebay are forthcoming. At this time, only flow rate recommendations are available.
