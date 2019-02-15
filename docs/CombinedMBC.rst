@@ -1,3 +1,6 @@
+.. role:: raw-math(raw)
+	:format: latex html
+
 .. image:: images/LOGOS.png
 
 ==========================================
@@ -201,16 +204,76 @@ These calculations can be found in line 191-202 below.
 	:lines: 191-202
 
 
-Available Fraction to Flow Goals
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Available Volume to Numeric Goals
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+An available *inflow* rate to be supplied to the downstream point is calculated as,
+
+	:math:`Q_{in, available} = V_{available} / T_{interval} + Q_{out}`
+
+	where:
+
+		- :math:`Q_{in, available}` is the available flowrate to be supplied to the downstream location,
+		- :math:`V_{available}` is the available volume as calculated in the section above,
+		- :math:`T_{interval}` is the recommendation interval,
+		- :math:`Q_{out}` is the outflow of the control volume at the downstream point [#f2]_ .
+
+.. [#f2] We ignore the outflow from the Conner Creek Retention Basin because: 1) the maximum storage volume is much larger than the dewatering pumps' capacity, and 2) the outflow from these dewatering pumps are not known.
+
+With the total available flow and the available volume calculated, we can distribute that amonst the upstream agents via their calculated Purchasing Power. This is calculated as follows,
+
+.. math::
+
+	Q_{goals,j} = \begin{bmatrix} 
+		q_{goal,1} \\ 
+		q_{goal,2} \\ 
+		\vdots \\ 
+		q_{goal,n} 
+		\end{bmatrix}_{j} =  Q_{available,j} \times \begin{bmatrix}
+		P_{power,1} \\
+		P_{power,2} \\
+		\vdots \\
+		P_{power,n}
+		\end{bmatrix}_{j}
+
+where,
+	- :math:`Q_{goals,j}` is an :math:`\begin{bmatrix}n \times 1 \end{bmatrix}` array where :math:`n` is the number of upstream agents in group :math:`j`
+	- :math:`Q_{available,j}` 
+	- :math:`P_{power}` is an :math:`\begin{bmatrix}n \times 1 \end{bmatrix}` array the Purchasing Powers of the :math:`n` upstream agents in group :math:`j`
+
+
+Likewise, calculating the volume available to each upstream agent is done in the same manner. These calculations are done in lines 202-215 and can be found below. 
 
 .. literalinclude:: C:\Users\Hail\Desktop\Github\RealTimeRecs-gregjewi\CombinedMBC.py
 	:lines: 203-216
 
 
+Placing Recommendations to Object Containers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+In lines 221-257 the flow and volume recommendations (or 'goals') calculated in the section above are added to the respective asset objects to which they correspond.
+Also, because asset objects themselves can hold multiple control points operating in multiple markets (or groupings,) the group that the recommendation corresponds to is passed as well. An example can be found below.
+
+.. literalinclude:: C:\Users\Hail\Desktop\Github\RealTimeRecs-gregjewi\CombinedMBC.py
+	:lines: 221-229
+
+
+..Asset objects can operate such that their control points can contribute to different groups. For example Conner Creek Pump Station sanitary pumps directly contribute to flow received to the Fairview Pump Station, while the storm pumps contribute directly to the Conner Creek Retention Basin. In the development of our groupings, Conner Creek Retention Basin is the downstream point for Group 1 and Fairview Pump Station is the downstream point for Group 2.
+
+
+
 Writing Recommendations
 -------------------------
 Finally, recommendations for assets are written to the Influx DB, so that the recommendations can be used for the :doc:`DecisionSupportDashboard`.
+Flow and volume recommendations are written directly using the method ``.write_goals()`` in lines 259-261.
+
+.. literalinclude:: C:\Users\Hail\Desktop\Github\RealTimeRecs-gregjewi\CombinedMBC.py
+	:lines: 259-261
+
+Additionally in lines 264-297 numeric flow and volume values are discretized into pump action recommendations.
+These discretized recommendations are written to the InfluxDB as well to be viewed on the Decision Support Dashboard.
+
+.. literalinclude:: C:\Users\Hail\Desktop\Github\RealTimeRecs-gregjewi\CombinedMBC.py
+	:lines: 264-297
 
 
 
