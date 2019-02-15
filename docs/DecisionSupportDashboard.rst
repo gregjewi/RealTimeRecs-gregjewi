@@ -4,7 +4,6 @@
 Decision-Support Dashboard
 ==========================
 
-
 All features of the Decision-Support Dashboard are built in `Grafana <https://grafana.com/>`_. 
 Interested in learning more about Grafana?
 `Check out the docs <http://docs.grafana.org/guides/getting_started/>`_.
@@ -16,10 +15,11 @@ Having trouble logging in to our Grafana Dashboard? Check out :doc:`LoginGrafana
 
 .. note:: If you would like credentials to access the Decision-Support Dashboard, contact gregjewi@umich.edu.
 
+.. note:: **GLWA Operators using the Dashboard at SCC** `CLICK HERE <http://ec2-13-58-223-140.us-east-2.compute.amazonaws.com/DDS_autorefresh.html>`_ .
+
 
 Dashboard Architecture
 ----------------------
-
 Within Grafana, a connection is made to our application's database within an InfluxDB instance. 
 Having established this connection, we can build the dashboard visuals by specifying the particular measurements we want to query.
 During the run of the recommendation engine, graphics are built and uploaded to an AWS S3 bucket that reflect the latest recommendation.

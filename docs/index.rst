@@ -24,6 +24,11 @@ The purpose of this documentation is to provide information on the following:
     * **Theory**: Describe the framework through which real-time recommendations are generated.
     * **Software & Applications**: Outline application workflow and highlight key functionality of scripts and packages.
 
+
+.. note:: **GLWA Operators using the Dashboard at SCC** `CLICK HERE <http://ec2-13-58-223-140.us-east-2.compute.amazonaws.com/DDS_autorefresh.html>`_ .
+
+
+
 .. toctree::
    :maxdepth: 1
    :caption: Contents:
