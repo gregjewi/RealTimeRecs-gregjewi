@@ -26,7 +26,7 @@ User-Defined Inputs
 
 Proper execution of the control and recommendation proocedure requires user input to define variables critical to the calculations.
 
-.. note:: Most user-defined inputs are tuples to take advantage of the data type's immutable characteristic, and therefore accidental changing of the value during operations.
+.. note:: Most user-defined inputs are tuples to take advantage of the data type's immutable characteristic, and therefore avoid accidental changing of the value during operations.
 
 Recommendation Interval and Threshold
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -181,7 +181,7 @@ Therefore we can approximate the available volume, :math:`V_{available}`, by
 		- :math:`Depth_{max}` is the maximum depth in the wet well or basin, and
 		- :math:`A_{cs}` is the horizontal cross sectional area of the basin, assumed to be constant at all depths.
 
-.. [#f1] The assumption of linearity was based up the GDRSS model. The constants used to calculate available volume were taken from this model.
+.. [#f1] The assumption of linearity was based upon the GDRSS model. The constants used to calculate available volume were taken from this model.
 
 **DRI**: For metered sewer locations that serve as the downstream point in a group, such as the DT-S-8 in the DRI, the available volume, :math:`V_{available}`, is calculated differently that basins and reservoirs. 
 This is because in a sewer line we do not have a clear control volume like a well defined basin or wet well.
