@@ -1,7 +1,7 @@
+.. image:: images/LOGOS.png
+
 Executive Summary
 =================
-
-.. image:: images/LOGOS.png
 
 In 2017 the `Great Lakes Water Authority <https://www.glwater.org/>`_ (GLWA) and the `Real-Time Water Systems Lab <http://107.170.79.190/>`_ began a University-Utility partnership to investigate the application of dynamic control of storm water assets within the GLWA combined sewer system.
 The initial scope of the project was to develop a decision support dashboard for a study area of the larger GLWA system.

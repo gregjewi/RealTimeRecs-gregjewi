@@ -1,7 +1,10 @@
+.. image:: images/LOGOS.png
+
+
 Software And Applications
 =========================
 
-.. image:: images/LOGOS.png
+
 
 Two different python modules were developed:
 * **SWMM_API.py**: Use with EPA SWMM models to prototype control routines. Developed to use off-line.
