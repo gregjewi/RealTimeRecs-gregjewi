@@ -14,4 +14,4 @@ Wondering where to start and how to use the dashboard? After reading the links b
    RealTimeWorkFlow
 
 
-.. note:: **GLWA Operators using the Dashboard at SCC** `CLICK HERE <http://ec2-13-58-223-140.us-east-2.compute.amazonaws.com/DDS_autorefresh.html>`_ .
+.. note:: **GLWA Operators using the Dashboard at SCC** `CLICK HERE <http://ec2-13-58-223-140.us-east-2.compute.amazonaws.com/DSD_autorefresh.html>`_ .
