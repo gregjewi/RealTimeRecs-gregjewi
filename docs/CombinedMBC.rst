@@ -1,7 +1,7 @@
-.. role:: raw-math(raw)
-	:format: latex html
-
 .. image:: images/LOGOS.png
+
+.. contents::
+   :depth: 4
 
 ==========================================
 Market-Based Control Recommendation Engine
@@ -16,6 +16,7 @@ Market-Based Control Recommendation Engine
 3. Transform the numeric flow recommendations into actionable recommendations.
 
 4. Write recommendations to InfluxDB.
+
 
 
 Code

@@ -16,7 +16,6 @@ This work was developed with the support of the `Great Lakes Water Authority <ht
 Though an aim of this documentation is to cover the general approach of the application, much of the information herein is directed explicitly towards operators, technicians, and engineers of GLWA. 
 Care is taken in the organization of this documentation to --
 where possible -- separate general information from the GLWA-specific information.
-Information only relevant to GLWA's application will be indicated with the key (GLWA).
 
 The purpose of this documentation is to provide information on the following:
     * **Decision-Support Dashboard**: Introduce the Decision-Support Dashboard and information about how to use the recommendations provided.
@@ -41,7 +40,7 @@ The purpose of this documentation is to provide information on the following:
    SoftwareAndApplications
    EvaluationPlan
    FutureWork
-   SupportingDocumenation
+   SupportingDocumentation
 
 
 Indices and tables

@@ -1,8 +1,12 @@
 .. image:: images/LOGOS.png
 
+.. contents::
+   :depth: 3
 
 Decision-Support Dashboard
 ==========================
+
+
 
 All features of the Decision-Support Dashboard are built in `Grafana <https://grafana.com/>`_. 
 Interested in learning more about Grafana?

@@ -9,6 +9,5 @@ Methodology And Results
    :maxdepth: 1
    :caption: Contents:
 
-   Theory
    WaterExchangeMarket
    DeterminingParameters

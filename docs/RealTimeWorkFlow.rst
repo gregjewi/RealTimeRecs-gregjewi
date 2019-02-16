@@ -4,6 +4,14 @@
 Real-Time Workflow
 ==================
 
+.. toctree::
+	:maxdepth: 1
+	:caption: Contents:
+
+	CombinedMBC
+	BuildingTheSVGs
+	ObjectToS3
+
 Process
 ==========
 
@@ -26,13 +34,3 @@ Process
 	**-** ``inkscape --export-png=/output/path/pic.png /input/path/built.svg``: Converts ``.svg`` to ``.png`` using Inkscape command line.
 
 **3.** :doc:`ObjectToS3`: ``obj_to_s3.py`` uploads the ``.png`` image to an Amazon S3 bucket, publically visable so that the image can be used for the base graphic in a Grafana dashboard.
-
-
-
-.. toctree::
-	:maxdepth: 1
-	:caption: Contents:
-
-	CombinedMBC
-	BuildingTheSVGs
-	ObjectToS3

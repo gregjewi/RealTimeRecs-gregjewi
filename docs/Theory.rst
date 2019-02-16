@@ -1,6 +1,3 @@
-Theory
-======
-
 .. image:: images/LOGOS.png
 
 .. In this section you will find:
@@ -12,6 +9,11 @@ Theory
 .. * An example market set up, and
 .. * The extension of the single objective framework to multi-objective, multi-measurement market framework.
 
+Theory
+======
+
+.. contents::
+   :depth: 3
 
 Stormwater Conveyance Networks, An Application
 ----------------------------------------------
@@ -61,7 +63,7 @@ A more abstract example of a downstream agent would be a length of pipe (which f
 
 Both upstream agents and downstream agents have have weighting parameters associated with each of their characteristics/commodities (see `Mathematical Framework`_.)
 
-.. [#] Note: In reality, many ideal downstream locations for a market are also upstream agents within a different market, and therefore you could have a control point co-located with the downstream agent. We consider these to be *nested* or *sub* markets.
+.. [#] In reality, many ideal downstream locations for a market are also upstream agents within a different market, and therefore you could have a control point co-located with the downstream agent. We consider these to be *nested* or *sub* markets.
 
 
 

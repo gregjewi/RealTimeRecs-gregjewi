@@ -1,15 +1,11 @@
 .. image:: images/LOGOS.png
 
+.. contents::
+   :depth: 3
+
 ================================
 Building SVG Dashboard Graphics
 ================================
-
-- `Scripts Called`_
-- `Graphics File Structure`_
-- `latest.py`_
-- `recommended.py`_
-- `build_full_svg.py`_
-- `Inkscape Command Line`_
 
 Here we will cover the scripts that builds the real-time graphic used as part of the grafana dashboard (seen below.) 
 
